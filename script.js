@@ -199,5 +199,19 @@ document.getElementById('whatsappBtn').addEventListener('click', function() {
     const url = `https://api.whatsapp.com/send?phone=${numeroTelefono}&text=${encodeURIComponent(mensaje)}`;
     
     window.open(url, '_blank'); // Abre el link en una nueva pestaña
-  });
-  
+});
+
+// Reproducir la música al hacer clic en cualquier parte del body
+document.body.addEventListener('click', function() {
+    var audio = document.getElementById('background-music');
+    audio.play().catch(error => {
+        console.log("La reproducción automática fue bloqueada.");
+    });
+}, { once: true }); // Escucha el evento solo una vez
+
+// Hacer que la música se repita cuando termine
+var audio = document.getElementById('background-music');
+audio.addEventListener('ended', function() {
+    audio.currentTime = 0; // Reiniciar el audio desde el inicio
+    audio.play(); // Reproducir nuevamente
+});

@@ -10,13 +10,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <audio src="Audio de WhatsApp 2024-10-10 a las 19.26.55_9c723018.mp3" autoplay></audio>
-    <canvas id="heart"></canvas>
-    <div id="cs-div">
-        <div id="spiral" class="spiral"></div>
-        <div id="spiral2" class="spiral"></div>
-        <button id="whatsappBtn" class="whatsapp-button">Te extraño</button>
-    </div>
+
+  <audio id="background-music" src="Audio.mp3"></audio>
+  <canvas id="heart"></canvas>
+  <div id="cs-div">
+      <div id="spiral" class="spiral"></div>
+      <div id="spiral2" class="spiral"></div>
+      <button id="whatsappBtn" class="whatsapp-button">Te extraño</button>
+  </div>
 
     <div class='made-with-love'>
         De
@@ -26,13 +27,6 @@
 
     
   <script src="script.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-      const audio = document.getElementById('audio');
-      audio.play().catch(error => {
-        console.log('Auto-play was prevented:', error);
-      });
-    });
-  </script>
+  
 </body>
 </html>
