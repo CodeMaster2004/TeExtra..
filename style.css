@@ -1,0 +1,155 @@
+
+body {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    flex: 1;
+    background-color: rgba(0, 0, 0, .2);
+    z-index: -1;
+  }
+  
+  #cs-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 100px;
+  }
+  
+  
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  .spiral {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    color: #e0ecef;
+    font-family: "sans-serif";
+  }
+  
+  @keyframes spiral {
+    0% {
+      --angle: 0deg;
+    }
+  
+    100% {
+      --angle: 360deg;
+    }
+  }
+  
+  .character {
+    font-size: 5vh;
+    background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(255, 0, 0), rgb(255, 0, 0), rgb(255, 0, 0));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    transform: translateY(calc(sin(var(--angle)) * 100px)) scale(calc(cos(var(--angle)) * 0.5 + 0.5));
+    animation: spiral 4s linear infinite;
+    font-family: "Lilita One", sans-serif;
+  }
+  
+  @media (max-width: 490px) {
+    .character {
+      font-size: 2.2rem
+    }
+  }
+  
+  
+  
+  .made-with-love {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    top: 15PX;
+    /* Cambiado de "bottom: 10px;" a "top: 0;" */
+    text-align: center;
+    font-size: 2vh;
+    z-index: 9999;
+    font-family: arial;
+    color: #ffffff;
+    font-weight: 600;
+  }
+  
+  .made-with-love i {
+    font-style: normal;
+    font-size: 14px;
+    position: relative;
+    top: 2px;
+  }
+  
+  .made-with-love a {
+    color: #c74f2b;
+    text-decoration: none;
+  
+  
+  }
+  
+  .made-with-love a:hover {
+    text-decoration: underline;
+  }
+  
+  .made-with-love .dribble img {
+    max-width: 100%;
+    width: 26px;
+    position: relative;
+    top: -2px;
+    vertical-align: middle;
+  }
+  
+  .made-with-love a {
+    font-weight: bold;
+    /* Añadiendo negrita solo a los enlaces */
+  }
+  .audio{
+    display: none;
+  }
+
+
+
+#whatsappBtn {
+    position: relative;
+    top: 30vh;
+    padding: 0.6em 1.3em;
+    font-weight: 900;
+    font-size: 18px;
+    background-color: rgb(40, 40, 40);
+    border-radius: 10px;
+    border: 1px solid rgb(255, 0, 51);
+    color: aliceblue;
+    box-shadow: 0 0 25px rgb(255, 0, 51),
+                0 0 25px rgb(232, 97, 124),
+                0 0 5px rgb(255, 0, 51) inset;
+    cursor: pointer;
+}
+  
+#whatsappBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgb(255, 0, 51),
+                0 0 30px rgb(255, 0, 51),
+                0 0 10px rgb(255, 0, 51) inset;
+}
+audio{
+    display: none;
+}
