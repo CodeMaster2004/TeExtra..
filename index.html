@@ -24,7 +24,15 @@
         Alexander Herrera 
     </div>
 
-
+    
   <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const audio = document.getElementById('audio');
+      audio.play().catch(error => {
+        console.log('Auto-play was prevented:', error);
+      });
+    });
+  </script>
 </body>
 </html>
